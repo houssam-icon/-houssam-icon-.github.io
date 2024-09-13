@@ -3,121 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Luffy's Personal Webpage - Anime Analysis Content Creator">
-    <title>Luffy - Anime Analysis Content Creator</title>
+    <meta name="description" content="Hossam's Personal Webpage - Anime Analysis Content Creator">
+    <title>Hossam - Anime Analysis Content Creator</title>
     <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: #ffffff;
+            color: #333333;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #1e1e1e;
+            background-color: #ffffff;
             padding: 20px;
             text-align: center;
+            border-bottom: 2px solid #3498db;
+            position: relative;
         }
         header h1 {
             font-size: 2.5em;
-            color: #f39c12;
+            color: #3498db;
+            margin: 0;
         }
         nav {
-            text-align: center;
-            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
         }
         nav a {
-            color: #f39c12;
+            color: #3498db;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2em;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            border: 2px solid #3498db;
+        }
+        nav a:hover {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+        .hero {
+            background-color: #f9f9f9;
+            padding: 100px 20px;
+            text-align: center;
+            color: #333333;
+            margin-bottom: 40px;
+            border-bottom: 5px solid #3498db;
+        }
+        .hero h2 {
+            font-size: 3.5em;
+            margin: 0;
+            color: #333333;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin: 20px 0 0;
+            color: #666666;
+        }
+        .hero .lines {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .hero .line {
+            height: 2px;
+            width: 100px;
+            background-color: #3498db;
+            margin: 0 10px;
         }
         section {
             padding: 40px;
             max-width: 1000px;
             margin: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h2 {
-            color: #f39c12;
-            border-bottom: 2px solid #f39c12;
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
+            font-size: 2em;
+            margin-top: 0;
         }
         p {
             line-height: 1.6;
             font-size: 1.1em;
         }
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .centered img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
         footer {
-            background-color: #1e1e1e;
+            background-color: #ffffff;
             color: #777;
             text-align: center;
             padding: 20px;
             font-size: 0.9em;
+            border-top: 2px solid #3498db;
         }
         .social-links {
+            display: flex;
+            justify-content: center;
             margin: 20px 0;
-            text-align: center;
         }
         .social-links a {
-            color: #f39c12;
+            color: #3498db;
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 2em;
+            margin: 0 15px;
+            font-size: 2.5em;
+            display: inline-block;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.3s;
         }
-        /* Media Queries for responsiveness */
+        .social-links a:hover {
+            background-color: #3498db;
+            color: #ffffff;
+            transform: scale(1.2);
+        }
+        .menu-toggle {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 1.8em;
+            color: #3498db;
+        }
+        .menu-toggle.active {
+            color: #ffffff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .navbar a {
+            margin: 10px 0;
+        }
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
+            .menu-toggle {
+                display: block;
             }
-            nav a {
-                font-size: 1em;
-                margin: 0 10px;
+            nav {
+                display: none;
             }
-            section {
-                padding: 20px;
+            .navbar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            .navbar.active {
+                display: flex;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Luffy - Anime Analysis Creator</h1>
-        <nav>
+        <div class="menu-toggle" id="menu-toggle"><i class="fas fa-ellipsis-h"></i></div>
+        <h1>Hossam - Anime Analysis Creator</h1>
+        <nav class="navbar" id="navbar">
             <a href="#about">About Me</a>
             <a href="#content">Content</a>
             <a href="#social">Socials</a>
         </nav>
     </header>
 
-    <section id="about">
+    <section class="hero">
+        <h2>Welcome to My World of Anime Analysis</h2>
+        <p>Explore deep themes and insights into your favorite anime series. Discover thought-provoking content and join the conversation!</p>
+        <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <section id="about" class="centered">
         <h2>About Me</h2>
         <p>
-            Hey, I’m Luffy, also known as Lucifer in some circles. I’m a 19-year-old from Morocco with a passion for exploring deeper themes in anime. I’ve completed the ALX AI Career Essentials (AiCE) program and am currently studying at FST Tanger.
+            Hello! I’m Hossam, a 19-year-old anime analyst from Morocco. With a passion for exploring deep themes in anime, I bring a unique perspective to my content. Currently studying at FST Tanger and having completed the ALX AI Career Essentials (AiCE) program, I combine my academic insights with my enthusiasm for anime to delve into its complex themes and characters.
             <br><br>
-            My interest in anime analysis began with series like <em>Attack on Titan</em>, where I explored themes like freedom versus confinement. I’ve made several videos discussing anime topics, and I focus primarily on short-form content, like TikTok and YouTube Shorts.
+            My analysis focuses on uncovering the societal reflections and philosophical questions embedded in series like <em>Attack on Titan</em> and <em>Naruto</em>. My content, created for platforms like TikTok and YouTube Shorts, aims to engage and inspire fellow anime fans by offering fresh perspectives and sparking meaningful conversations.
         </p>
+        <img src="https://i.ibb.co/m5trkDL/DALL-E-2024-09-13-18-22-46-A-detailed-avatar-of-a-young-AI-expert-with-mid-length-brown-hair-warm-ho.webp" alt="Hossam's Avatar">
     </section>
 
-    <section id="content">
+    <section id="content" class="centered">
         <h2>My Content</h2>
         <p>
-            I create content analyzing anime themes, with a focus on series like <em>Attack on Titan</em> and <em>Naruto</em>. I explore the deeper meanings, societal reflections, and character motivations behind some of the most iconic anime series.
+            I specialize in analyzing anime themes, focusing on series such as <em>Attack on Titan</em> and <em>Naruto</em>. My content uncovers the deeper meanings, societal reflections, and character motivations behind iconic anime series.
             <br><br>
-            So far, I’ve posted several shorts on TikTok and YouTube, including themes like "The Walls in AOT: A Prison or Protection?" and "Freedom vs. Confinement in Attack on Titan". My content mainly revolves around anime analysis, and I’m continuously looking to expand the range of anime topics I cover.
+            I’ve produced several engaging shorts, including themes like "The Walls in AOT: A Prison or Protection?" and "Freedom vs. Confinement in Attack on Titan". I am committed to expanding my analysis to more anime topics and series.
         </p>
+        <img src="https://i.ibb.co/7YH0xvV/my-content.webp" alt="My Anime Content">
     </section>
 
-    <section id="social">
+    <section id="social" class="centered">
         <h2>Socials</h2>
         <div class="social-links">
-            <a href="https://www.tiktok.com/@anime.insight0?_t=8pgwzf9r1Og&_r=1" target="_blank" aria-label="Luffy on TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@AnimeInsight-l2e" target="_blank" aria-label="Luffy on YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@anime.insight0?_t=8pgwzf9r1Og&_r=1" target="_blank" aria-label="Hossam on TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@AnimeInsight-l2e" target="_blank" aria-label="Hossam on YouTube"><i class="fab fa-youtube"></i></a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Luffy | Anime Analysis | Content Creator</p>
+        <p>&copy; 2024 Hossam | Anime Analysis | Content Creator</p>
     </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navbar').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
